@@ -23,50 +23,99 @@
   TBD-step-1-notes.
 -->
 
-# Introduction to Version Control Systems
+# Week 1: Version Control Systems overview and Introduction to Git
 
-Welcome to the Introduction to Version Control Systems course. 
-This course will be using GitHub and GitHub Skills templates, 
-I strongly suggest completing two GitHub skills courses before starting the course:
+In the first part of the course:
+- you will learn basic information about Version Control Systems (VCS)
+- you will learn what is Git and how to use it
+- you will practice using Git in the GitHub codespace
 
-- [Introduction to GitHub](https://github.com/skills/introduction-to-github)
-- [Code with Codespace](https://github.com/skills/code-with-codespaces) (the first 3 steps are enough for this course)
+## 1 :book: :eyes: What is Version Control System and Git
 
-In this course you will:
-- learn what is Version Control System (VCS) 
-- practice using Git and GitHub
-- practice creating new branches, Pull Requests and merging them
-- practice working with other people on the same repository
-- learn about VCS for big data files
+Version Control Systems help you track versions of digital artifacts, such as code (scripts, source files), 
+configuration files, images, documents, and data. 
+With proper annotation of changes, a VCS becomes the lab notebook for changing content in the digital world. 
+Since all versions are stored, VCS makes it possible to provide any previous version at a later point in time. 
+You can see how this is critical for reproducing previous results – if your work’s history is stored in a VCS, 
+you just need to get a previous version of your materials to reproduce an earlier work. 
+You can also recover a file which you mistakenly removed since a previous version would be contained within your VCS. 
+These features alone make it worthwhile to place any materials you produce and care about under an appropriate VCS.
 
+Besides tracking changes, another main function of a VCS is collaboration. 
+Any modern VCS supports transfer and aggregation of changes to your work among collaborators. 
+Public versioning and collaboration services (such as GitHub) allow you to integrate 
+other online services, e.g., Codespace we will be using in this course.
 
-### Course format
-The entire course will have 4 parts or steps, each step will have multiple sections that will require reading short text or specific section from the external sources, watching a short video or practicing your knowledge in hands-on activities.
-Every step should take no more than 1--2, hours and significantly less if you have prior experience.
-
-## How to start this course
-
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'Science-Reproducibility',
-  template_name: 'version-control-systems',
-  owner: '@me',
-  name: 'version-control-systems',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
-
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=Science-Reproducibility&template_name=version-control-systems&owner=%40me&name=version-control-systems&description=My+clone+repository&visibility=public)
+#### :eyes: **Video** :eyes: 
+Watch 10min of my presentation from [ABCD/RerproNim course](https://www.abcd-repronim.org/week2.html) 
+for [introduction to VCS and Git](https://youtu.be/SyKmry47SsY?si=10_UXbh5fuEU8za6&t=2139) 
+(the video should open at timestamp 35m39s, and you should watch till 46m)
 
 
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+#### More about VCS and Git from Software Carpentry
+Software Carpentry provides an excellent introduction to VCS and Git, I recommend reading these parts:
+- [Summary and Setup](https://swcarpentry.github.io/git-novice/index.html) (in this course we will be using GitHub Codespace, but I highly recommend following the instruction for installing Git on your local machine)
+- [Another overview of VCS](https://swcarpentry.github.io/git-novice/01-basics.html)
+- [All about setting up Git](https://swcarpentry.github.io/git-novice/02-setup.html)
 
+
+> Questions:
+> - Do you know how to add a new file to the repository?
+> - Do you know how to check the status of the repository?
+> - Do you know how to create a new snapshot of the repository?
+
+
+## 2 :keyboard: Practicing using Git in Codespace
+
+> [!TIP]
+> - I recommend opening another browser tab with this repository, so you can keep these instructions open for reference all the time.
+> - In case you haven't used Codespace before, I will provide very detailed steps for this first exercise.
+
+1. Opening Codespace with terminal
+  - Start from the landing page of your repository opened in new tab.
+  - Change the branch to "week1" (you should see a new content that was not in the `main` branch)
+  - Click the green "Code" button located in the middle of the page.
+  - Select the Codespaces tab in the box that pops up and then click the "Create codespace on week1" button.
+  - Verify your codespace is running. The browser should contain a VS Code web-based editor and a terminal.
+  - In the terminal, move to the `week1` directory that is the working directory for this week.
+    (if you don't see this directory, you're likely in a wrong branch).
+
+2. Practice using the command you learn about from the video:
+  -  `git add`
+  -  `git commit`
+  -  `git push`
+  - `git log`
+  - `git status`
+  - `git diff`
+  -  try using `man` to learn more about the commands, e.g. `man git status`
+
+## 3 :keyboard: :white_check_mark: Exercise 1: Modify the content of the files and update the repository
+
+> [!TIP]
+> - This exercise has :keyboard: and :white_check_mark:, that means you will have a specific task and the output will be checked by automatic tests I wrote for this course, and the repository will move to **Part 2** after the task is completed.
+> - This is our first exercise of this type, so I will provide very detailed steps to guide you.
+
+
+1. Go to terminal in Codespace (you can use the one that you opened in part 2, or follow the instruction from part 2 to open again)
+2. Update content of a file:
+  - Go to `week1` directory
+  - Check the content of `file1.txt` file and update it to "Hello, World!"
+  - Add the changes to the repository and commit them
+3. Create a new file:
+  - Create a new file `file.txt` with a content "It's a beutiful day" (you can use `touch` or/and `echo` command)
+  - Add a new file to the repository and commit the changes
+4. Change the name of your new file:
+   - change the name of the file `file.txt` to `file2.txt` in a way that you keep 
+   the file history (use `man` to check `git mv` command)
+   - Add the changes to the repository and commit them
+   - Run `git log` to check the history of the `file2.txt` file
+5. Create a Pull Request to the `main` branch
+   - Use GitHub interface to create a Pull Request
+   - Check the status of tests
+   - If all tests pass, merge the Pull Request, this should update a new `README.md` on the main page of the repository (you can reload the page after 30-60s if you don't see the new content)
+
+> [!IMPORTANT]
+> Following all the steps from part 3, including creating and merging the Pull Request, is necessary to move to the next parts of the course.
 
 <footer>
 
